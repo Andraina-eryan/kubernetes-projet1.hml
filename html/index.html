@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mini-projet HTML/CSS pour apprendre à déployer un site statique sur Kubernetes avec Minikube."
+    />
+    <title>Mon premier déploiement Kubernetes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="navbar">
+        <a class="brand" href="#">Kube<span>Start</span></a>
+        <span class="status"><span class="dot"></span> Site en ligne</span>
+      </nav>
+      <main class="hero-content">
+        <p class="eyebrow">MON PREMIER PROJET KUBERNETES</p>
+        <h1>Du code au <span>cluster</span>.</h1>
+        <p class="intro">
+          Une petite page web statique, empaquetée dans une image Docker et
+          déployée sur Kubernetes avec Minikube.
+        </p>
+        <a class="button" href="#objectif"
+          >Découvrir le projet <span aria-hidden="true">↓</span></a
+        >
+      </main>
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+    </header>
+
+    <section class="section" id="objectif">
+      <div class="section-heading">
+        <p class="eyebrow">LES ÉTAPES</p>
+        <h2>Un petit projet, <span>un vrai workflow</span>.</h2>
+        <p>
+          Tu vas pratiquer les principales étapes d'un déploiement d'application
+          conteneurisée.
+        </p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="number">01</div>
+          <h3>Construire</h3>
+          <p>Créer une page HTML et la mettre en forme avec CSS.</p>
+        </article>
+        <article class="card">
+          <div class="number">02</div>
+          <h3>Conteneuriser</h3>
+          <p>
+            Construire une image Docker basée sur Nginx pour servir le site.
+          </p>
+        </article>
+        <article class="card">
+          <div class="number">03</div>
+          <h3>Déployer</h3>
+          <p>Créer un Deployment et un Service Kubernetes dans Minikube.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="terminal-section">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <i></i><i></i><i></i><span>PowerShell</span>
+        </div>
+        <div class="terminal-body">
+          <p>
+            <span class="prompt">PS &gt;</span> docker build -t kube-start:v1 .
+          </p>
+          <p>
+            <span class="prompt">PS &gt;</span> minikube image load
+            kube-start:v1
+          </p>
+          <p><span class="prompt">PS &gt;</span> kubectl apply -f k8s/</p>
+          <p class="success">deployment.apps/kube-start created</p>
+          <p class="success">service/kube-start created</p>
+        </div>
+      </div>
+      <div class="terminal-copy">
+        <p class="eyebrow">OBJECTIF FINAL</p>
+        <h2>Voir ton site depuis ton navigateur.</h2>
+        <p>
+          Une fois le Service créé, Minikube te donnera accès à ton application
+          depuis ta machine.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <span class="brand">Kube<span>Start</span></span>
+      <p>Mini-projet d'entraînement · HTML, CSS, Docker et Kubernetes</p>
+    </footer>
+  </body>
+</html>
